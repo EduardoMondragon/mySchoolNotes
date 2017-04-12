@@ -1,0 +1,32 @@
+<div class="jumbotron">
+   <div class="row">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-10 divStyle animated tada">
+      <div>
+        <input class="input writeHere" style="width: 820px; height: 70px;" type="text" placeholder="ESCRIBE UN TÍTULO" ng-model="vm.note.title" ng-change="vm.note.title = vm.note.title.toUpperCase();">
+        <textarea class="writeHere" style="width: 820px; height: 70px;" id="123" cols="80" rows="5" placeholder="ESCRIBE TU NOTA AQUI" ng-model="vm.note.note"></textarea>
+        <div class="footer">
+          <h3 class="pull-left dateTitle">Fecha de Entrega: <input type="date" class="dateInput" ng-model="vm.note.date"> 
+          <button class="btn-success btnSave pull-right" ng-click="vm.addNote();">Guardar Nota</button></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--NOTE-->
+  <div class="row">
+      <div class="col-xs-3 animated fadeInRight" ng-repeat="note in vm.notes">
+          <div class="panel panel-default NoteStyle  animated notePulseEfect" ng-mouseover="vm.switchFooter = !vm.switchFooter" ng-mouseleave="vm.switchFooter? 'vm.showIcons' : 'vm.hideIcons'">
+              <div class="panel-heading"><strong class="pull-left">{{note.title}}</strong><span class="pull-right">{{note.createDate|date:yy/mm/dd}}</span></div>
+                  <div class="panel-body">            
+                      <p>
+                        <h4>{{note.note}}</h4>
+                      </p>
+                  </div>
+                  <div class="panel-footer">
+                    <h4 class="colorDate">{{note.date|date:yy/mm/dd}} <span class="glyphicon glyphicon-trash pull-right {{vm.showIcons}} {{vm.hideIcons}}" ng-click="vm.deleteNote($index)"></span><span class="glyphicon glyphicon-th-large pull-right"></span></h4> 
+                  </div>
+                  <!--<h1>{{vm.switchFooter}}</h1>-->
+          </div>
+      </div>
+  </div>
+</div>
