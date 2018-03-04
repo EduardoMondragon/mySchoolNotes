@@ -1,0 +1,29 @@
+<style>
+    .md-datepicker-calendar-pane {
+        z-index: 1200;
+    }
+</style>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div style="padding:15px;">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Titulo</label>
+                    <input ng-model="vm.tituloModificable">
+                </md-input-container>
+            </div>
+            <div class="modal-body">
+                <textarea class="textAreaModificarNota" style="width:100%" rows="15" ng-model="vm.textoModificable">
+            </textarea>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Fecha :</label>
+                    <md-datepicker ng-model="vm.fechaModificable" ng-value="vm.fechaModificable"></md-datepicker>
+                </md-input-container>
+            </div>
+            <div class="modal-footer myModalFooter">
+                <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="vm.changeNote()">Guardar Cambios</button>
+            </div>
+        </div>
+    </div>
+</div>

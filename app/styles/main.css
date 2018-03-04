@@ -1,3 +1,6 @@
+html{
+  background-color: transparent!important;
+}
 /*
 ============================
            MENÚ
@@ -54,24 +57,6 @@ body {
   margin: 30px 0;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
-}
-
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
@@ -90,12 +75,6 @@ body {
     margin-bottom: 30px;
     
   }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-    height: 100%;
-    background-color: transparent;
-  }
 }
 /*NOTES*/
 /*posision EDWARD'S NOTES*/
@@ -105,7 +84,7 @@ body {
 }
 .button:after {/* click efect*/
     content: "";
-    background: #90EE90;
+    background: #82589F;
     display: block;
     position: absolute;
     padding-top: 130%;
@@ -122,23 +101,30 @@ body {
     opacity: 1;
     transition: 0s
 }
-/*-------------
-  TEXT AREA and INPUT
----------------*/ 
-@media screen and (min-width: 468px) {
-  .writeHere{
-    font-size: 20px;
-    resize: none;
-    max-width: 100%;
-    border: solid transparent 0px;
-    transition: 0.5s;
+
+.boxInputs{
+  padding: 20px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 5px 5px 5px lightgrey;
+  background-color: white;
+}
+
+.writeHere{
+  font-size: 20px;
+  resize: none;
+  border: solid transparent 0px;
+  width: 100%; 
+  height: 80px;
+  padding-top: 20px;
+  outline: none;
+}
+@media screen and (max-width:1000px){
+  .boxInputs{
+    width: 100%;
   }
-  .writeHere:focus{
-     outline: none;
-     transition: 0.5s;
-     border-bottom: 1px solid #16a085;
-     margin-bottom: 5px;
-  }
+}
   .divStyle{
     box-shadow: 0px 5px 5px 5px lightgrey;
     background-color: white;
@@ -147,48 +133,26 @@ body {
        DATE
 ---------------*/ 
   .dateTitle{
-    color: #16a085;
+    color: #82589F;
   }
-  .dateInput{
-    border: none;
-    color: #2c3e50;
-    outline: none;
-  }
-}
+
+
 /*-------------
   SAVE BUTTON 
 ---------------*/  
-@media screen and (min-width: 868px) {
-  .btnSave{
-    position: relative;
-    width: 392px;
-    height: 40px;
-    font-size: 18px;
-    max-width: 100%;
-    border: none;
-  }
-  .btnSave:hover{
-   background-color: black;
-   opacity: 0.9;
-   transition: 1s;
-  }
+.btnSave{
+  background-color:#82589F;
+  color: rgb(196, 196, 196);
+  position: relative;
+  height: 40px;
+  font-size: 18px;
+  border: 2px solid #82589F!important;
 }
 
-.datePosition{
-  position: inherit;
-  text-align: top-right;
-}
-
-.input{
-  border: solid transparent 0px;
-}
-
-.footer{
-  padding: 5px;
-  border: solid transparent 0px;
-}
-.cc{
-  text-align: left;
+.btnSave:hover{
+  background-color: transparent;
+  border: 2px solid #82589F!important;
+  color: rgb(141, 141, 141);
 }
 
 /*
@@ -201,21 +165,22 @@ body {
   overflow-x: hidden;
   text-align: justify;
   text-justify: inter-word;
-  height: 100%;
+  height: 260px;
   margin-right: 0px;
   margin-left: 0px;
   margin-top: 30px;
   border-radius: 0px !important;
-  box-shadow: 2px 2px 2px 2px lightgrey;
+  box-shadow: 2px 2px 2px 2px rgba(211, 211, 211, 0.5);
    word-wrap: break-word;
+   border: 0px;
 }
 .panel-heading{
   height: 49px;
-  background-color: black !important;
   opacity: 0.9;
-  color: white !important;
+  color: rgb(196, 196, 196)!important;
   border: none;
   border-radius: 0px !important;
+  outline: none;
 }
 .panel-heading:hover{
   opacity: 0.8;
@@ -223,34 +188,85 @@ body {
 .panel-footer{
   background-color: transparent;
   border: none;
+  height: 50px;
+  outline: none;
+}
+.panel-body{
+  height: 155px;
+  outline: none;
 }
 
+pre{
+  height: 155px;
+  border: none;
+  background-color: transparent;
+  white-space: pre-wrap;
+  overflow: hidden;
+}
+.ajustTextToPre{
+  margin-top:-20px!important;
+}
 .notePulseEfect:hover{
   animation-name: pulse;
 }
-/*-------------
-  DELETE ICON 
----------------*/  
-.deleteIcon{ 
-  cursor: pointer;
-  color: #34495e;
-  font-size: 18px;
-}
-.deleteIcon:hover{
-  transition: 1s;
-  color: #c0392b;
-}
-.hideIcons{
-  color: transparent;
-}
-
-/*-------------
-  NOTE FOOTER 
----------------*/ 
-.panel-footer{
-height: 50px;
-}
 
 .colorDate{
-  color: #2c3e50;
+  color: #474747;
+}
+
+.containerTagColors{
+  height: 60px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 1px 1px 15px 4px rgba(211, 211, 211, 0.5);
+  background-color: rgba(56, 56, 56, 0.021);
+  margin-top: -60px;
+  color:rgba(48, 48, 48, 0.788);
+}
+
+/* 
+MODAL
+*/
+
+.modal-dialog {
+  width: 70%;
+  height: 80%;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+
+.modal-content {
+  height: auto;
+  min-height: 100%;
+  border-radius: 0;
+}
+
+.myModalFooter{
+  position: absolute;
+  
+  bottom: 0px;
+  width: 100%;
+  background-color:rgb(230, 230, 230);
+  border-top: 1px solid rgb(230, 230, 230);
+  z-index: 100;
+}
+
+.modal-body{
+  position: absolute;
+  top: 70px;
+  bottom: 60px;
+  width: 100%;
+  font-weight: 300;
+  overflow: auto;
+}
+
+.textAreaModificarNota{
+  outline: none;
+  border: none;
+  background-color: rgba(204, 204, 204, 0.349);
+  padding: 10px;
+  resize: none;
 }

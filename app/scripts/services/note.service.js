@@ -3,11 +3,11 @@ angular.module('myNotesApp')
      
     return{
         getNotes: function(){
-            return $http.get('http://localhost:3000/notes');
+            // return $http.get('http://localhost:3000/notes');
         },
 
-        addNote: function(note){
-            return $http.post('http://localhost:3000/notes', note);
+        addNote: function(noteObject){
+            
         }
     }
 
