@@ -1,5 +1,5 @@
 <div class="container">
-  <div class=" boxInputs animated tada">
+  <div class=" boxInputs animated headAnimation">
     <form>
       <input class="writeHere" style="border-bottom:2px solid lightgrey;" type="text" placeholder="Titulo ..." ng-model="vm.note.title" ng-change="vm.note.title = vm.note.title.toUpperCase();">
       <textarea ng-submit="vm.addNote()" class="writeHere" cols="80" rows="5" placeholder="Nota ..." ng-model="vm.note.note"></textarea>
@@ -20,7 +20,7 @@
   <br>
   <!--NOTE-->
   <div class="row">
-    <div  class="col-md-4 col-xs-12 animated fadeInRight" ng-repeat="note in vm.notes track by $index">
+    <div  class="col-md-4 col-xs-12 animated noteAnimation" ng-repeat="note in vm.notes track by $index">
       <div class="panel panel-default NoteStyle" ng-mouseover="vm.showOptions($index)" ng-mouseleave="vm.optionsNote=-1;vm.showContainerTagColors=false;" ng-click="vm.noteToModal(note)">
         <div class="panel-heading" style="background-color:{{note.color}}" data-toggle="modal" data-target="#exampleModal" ng-click="vm.getCurrentIndex($index)">
           <div class="row">
@@ -49,7 +49,7 @@
             <div class="col-xs-6">
               <h6 class="colorDate">Creado el : {{note.createdDate|date:'dd/MM/yy'}}              
             </div>
-            <div class="col-xs-6" ng-show="vm.optionsNote == $index" style="padding-top:5px">
+            <div class="col-xs-6" ng-show="vm.optionsNote == $index || vm.showToMobile == true" style="padding-top:5px;">
               <div class="row">
                 <div class="col-xs-4">
                   <i class="icon-printer pull-right" style="cursor:pointer;outline: none;" ng-click="vm.print(note);"></i>                                     

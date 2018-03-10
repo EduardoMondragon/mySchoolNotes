@@ -14,12 +14,18 @@ angular.module('myNotesApp')
     vm.noteContent = "";
     vm.switchFooter = false;
     vm.getIndex;
+    vm.showToMobile = false;
     //private function
     function activate() {
       var a = JSON.parse(localStorage.getItem('notas'));
       for (var e in a) {
         vm.notes.push(a[e]);
       }
+      
+      if($(window).width()<=1000){
+        vm.showToMobile = true;
+      }
+      
     }
     activate();
 
